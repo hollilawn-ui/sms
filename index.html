@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Text Hollingsworth Lawn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body style="font-family: Arial, sans-serif; padding: 24px;">
+  <h2>Opening your text app…</h2>
+  <p>If nothing opens, tap the button below.</p>
+
+  <p>
+    <a id="smslink" style="display:inline-block; padding:14px 18px; background:#111; color:#fff; border-radius:10px; text-decoration:none;"
+       href="#">
+      Text Us
+    </a>
+  </p>
+
+  <script>
+    // Your number + message
+    const number = "+19892723301";
+    const message = "Hi! I am interested in lawn service. I would like to schedule a free on-site estimate.";
+
+    // Build SMS link (works on most phones)
+    const smsUrl = `sms:${number}?&body=${encodeURIComponent(message)}`;
+
+    // Set button link
+    document.getElementById("smslink").href = smsUrl;
+
+    // Try to auto-open SMS
+    setTimeout(() => {
+      window.location.href = smsUrl;
+    }, 300);
+  </script>
+</body>
+</html>
